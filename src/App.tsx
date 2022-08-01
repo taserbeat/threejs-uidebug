@@ -1,10 +1,16 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import GUI from "lil-gui";
 
 import "./App.css";
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+/**
+ * UIデバッグ
+ */
+const gui = new GUI();
 
 // シーン
 const scene = new THREE.Scene();

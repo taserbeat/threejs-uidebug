@@ -34,13 +34,13 @@ document.body.appendChild(renderer.domElement);
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
 
 // マテリアル
-const material = new THREE.MeshBasicMaterial({
+const basicMaterial = new THREE.MeshBasicMaterial({
   color: "red",
 });
 
 // メッシュ化
-const box = new THREE.Mesh(boxGeometry, material);
-scene.add(box);
+const boxMesh = new THREE.Mesh(boxGeometry, basicMaterial);
+scene.add(boxMesh);
 
 // ライト
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);

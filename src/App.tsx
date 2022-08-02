@@ -43,34 +43,38 @@ const boxMesh = new THREE.Mesh(boxGeometry, basicMaterial);
 scene.add(boxMesh);
 
 // デバッグ
-// gui.add(boxMesh.position, "x", -3, 3, 0.01);
-gui
+// フォルダー
+const positionFolder = gui.addFolder("Position");
+const visualFolder = gui.addFolder("Visual");
+
+// positionFolder.add(boxMesh.position, "x", -3, 3, 0.01);
+positionFolder
   .add(boxMesh.position, "x", -3, 3, 0.01)
   .min(-3)
   .max(3)
   .step(0.01)
   .name("transformX");
 
-gui
+positionFolder
   .add(boxMesh.position, "y", -3, 3, 0.01)
   .min(-3)
   .max(3)
   .step(0.01)
   .name("transformY");
 
-gui
+positionFolder
   .add(boxMesh.position, "z", -3, 3, 0.01)
   .min(-3)
   .max(3)
   .step(0.01)
   .name("transformZ");
 
-gui.add(boxMesh.rotation, "x", -3, 3, 0.01).name("rotationX");
+positionFolder.add(boxMesh.rotation, "x", -3, 3, 0.01).name("rotationX");
 
-gui.add(boxMesh, "visible");
-gui.add(basicMaterial, "wireframe");
+visualFolder.add(boxMesh, "visible");
+visualFolder.add(basicMaterial, "wireframe");
 
-gui.addColor(basicMaterial, "color");
+visualFolder.addColor(basicMaterial, "color");
 
 // ライト
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);

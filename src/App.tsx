@@ -70,6 +70,8 @@ gui.add(boxMesh.rotation, "x", -3, 3, 0.01).name("rotationX");
 gui.add(boxMesh, "visible");
 gui.add(basicMaterial, "wireframe");
 
+gui.addColor(basicMaterial, "color");
+
 // ライト
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
 scene.add(ambientLight);
